@@ -1,0 +1,11 @@
+{
+  "server": {
+    "port": 3003
+  },
+  "meshblu": {
+    "protocol": "http"
+  },
+  "logger": {
+    "level": "debug"
+  }
+}
