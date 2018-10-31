@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "bf260ab8_d4c75ff0",
+        "filename": "config/custom-environment-variables.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2018-10-31T20:15:45Z",
+      "side": 1,
+      "message": "missing authenticator host and port.",
+      "range": {
+        "startLine": 5,
+        "startChar": 3,
+        "endLine": 5,
+        "endChar": 16
+      },
+      "revId": "f9a441f44accdccebf0115a3d99fb239d117efbc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0502571d_b7fd2c7a",
         "filename": "esm/controllers/UserController.js",
         "patchSetId": 1
