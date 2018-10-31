@@ -1,0 +1,14 @@
+{
+  "server": {
+    "port": "PORT"
+  },
+  "authenticator": {
+    "uuid": "AUTHENTICATOR_UUID",
+    "token": "AUTHENTICATOR_TOKEN"
+  },
+  "meshblu": {
+    "protocol": "MESHBLU_PROTOCOL",
+    "host": "MESHBLU_HOST",
+    "port": "MESHBLU_PORT"
+  }
+}
