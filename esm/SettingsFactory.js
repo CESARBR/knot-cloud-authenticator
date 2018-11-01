@@ -7,8 +7,9 @@ class SettingsFactory {
     const server = this.loadServerSettings();
     const meshblu = this.loadMeshbluSettings();
     const authenticator = this.loadAuthenticatorSettings();
+    const mailgun = this.loadMailgunSettings();
     const logger = this.loadLoggerSettings();
-    return new Settings(server, meshblu, authenticator, logger);
+    return new Settings(server, meshblu, authenticator, mailgun, logger);
   }
 
   loadServerSettings() {
@@ -16,7 +17,9 @@ class SettingsFactory {
       throw new Error('Missing server settings');
     }
     const server = config.get('server');
-    if (!server.port) {
+    if (!server.port
+      || !server.resetSenderAddress
+      || !server.resetUri) {
       throw new Error('Missing server settings');
     }
     return server;
@@ -45,6 +48,18 @@ class SettingsFactory {
       throw new Error('Missing authenticator settings');
     }
     return authenticator;
+  }
+
+  loadMailgunSettings() {
+    if (!config.has('mailgun')) {
+      throw new Error('Missing Mailgun settings');
+    }
+    const mailgun = config.get('mailgun');
+    if (!mailgun.apiKey
+      || !mailgun.domain) {
+      throw new Error('Missing Mailgun settings');
+    }
+    return mailgun;
   }
 
   loadLoggerSettings() {

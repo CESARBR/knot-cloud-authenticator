@@ -17,7 +17,7 @@ class UserStoreFactory {
       authenticatorName: 'KNoT Authenticator',
       meshbluHttp,
     });
-    return new UserStore(authenticator);
+    return new UserStore(authenticator, meshbluHttp);
   }
 
   createMeshbluHttp(meshbluConfig, authenticatorConfig) {
