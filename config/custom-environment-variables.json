@@ -1,6 +1,7 @@
 {
   "server": {
-    "port": "PORT"
+    "port": "PORT",
+    "resetUri": "RESET_URI"
   },
   "authenticator": {
     "uuid": "AUTHENTICATOR_UUID",
@@ -10,5 +11,9 @@
     "protocol": "MESHBLU_PROTOCOL",
     "host": "MESHBLU_HOST",
     "port": "MESHBLU_PORT"
+  },
+  "mailgun": {
+    "apiKey": "MAILGUN_API_KEY",
+    "domain": "MAILGUN_DOMAIN"
   }
 }
