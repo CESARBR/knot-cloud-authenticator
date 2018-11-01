@@ -3,11 +3,13 @@ import PasswordValidator from 'password-validator';
 import InvalidPasswordError from 'entities/InvalidPasswordError';
 
 class User {
-  constructor(email, password, uuid, token) {
+  constructor(email, password, uuid, token, resetToken, resetExpiration) {
     this.email = email;
     this.password = password;
     this.uuid = uuid;
     this.token = token;
+    this.resetToken = resetToken;
+    this.resetExpiration = resetExpiration;
   }
 
   validatePassword() {

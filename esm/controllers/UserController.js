@@ -4,8 +4,9 @@ import InvalidPasswordError from 'entities/InvalidPasswordError';
 import UserExistsError from 'entities/UserExistsError';
 
 class UserController {
-  constructor(createUserInteractor, logger) {
+  constructor(createUserInteractor, forgotPasswordInteractor, logger) {
     this.createUserInteractor = createUserInteractor;
+    this.forgotPasswordInteractor = forgotPasswordInteractor;
     this.logger = logger;
   }
 
@@ -26,7 +27,22 @@ class UserController {
     }
   }
 
+  async forgot(request, h) {
+    try {
+      const { email } = this.mapForgotRequest(request);
+      await this.forgotPasswordInteractor.execute(email);
+      return h.response().code(200);
+    } catch (error) {
+      this.logger.error(`Unexpected error at forgot(): ${error.message}`);
+      throw Boom.internal();
+    }
+  }
+
   mapCreateRequest(request) {
+    return request.payload;
+  }
+
+  mapForgotRequest(request) {
     return request.payload;
   }
 
