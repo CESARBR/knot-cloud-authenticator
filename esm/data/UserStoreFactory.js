@@ -31,7 +31,7 @@ class UserStoreFactory {
           authenticatorName: 'KNoT Authenticator',
           meshbluHttp,
         });
-        const userStore = new UserStore(authenticator);
+        const userStore = new UserStore(authenticator, meshbluHttp);
         resolve(userStore);
       });
     });

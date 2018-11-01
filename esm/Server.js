@@ -38,6 +38,18 @@ class Server {
           },
         },
       },
+      {
+        method: 'POST',
+        path: '/forgot',
+        handler: this.userController.forgot.bind(this.userController),
+        options: {
+          validate: {
+            payload: Joi.object({
+              email: Joi.string().email(),
+            }),
+          },
+        },
+      },
     ];
   }
 }

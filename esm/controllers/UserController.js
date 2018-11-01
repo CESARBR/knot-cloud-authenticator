@@ -2,8 +2,9 @@ import InvalidPasswordError from 'entities/InvalidPasswordError';
 import UserExistsError from 'entities/UserExistsError';
 
 class UserController {
-  constructor(createUserInteractor) {
+  constructor(createUserInteractor, forgotPasswordInteractor) {
     this.createUserInteractor = createUserInteractor;
+    this.forgotPasswordInteractor = forgotPasswordInteractor;
   }
 
   async create(request, h) {
@@ -23,7 +24,22 @@ class UserController {
     }
   }
 
+  async forgot(request, h) {
+    try {
+      const { email } = this.mapForgotRequest(request);
+      await this.forgotPasswordInteractor.execute(email);
+      return h.response().code(200);
+    } catch (error) {
+      console.error(error);
+      return h.response().code(500);
+    }
+  }
+
   mapCreateRequest(request) {
+    return request.payload;
+  }
+
+  mapForgotRequest(request) {
     return request.payload;
   }
 
