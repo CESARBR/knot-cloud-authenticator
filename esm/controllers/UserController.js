@@ -4,8 +4,9 @@ import InvalidPasswordError from 'entities/InvalidPasswordError';
 import UserExistsError from 'entities/UserExistsError';
 
 class UserController {
-  constructor(createUserInteractor, logger) {
+  constructor(createUserInteractor, forgotPasswordInteractor, logger) {
     this.createUserInteractor = createUserInteractor;
+    this.forgotPasswordInteractor = forgotPasswordInteractor;
     this.logger = logger;
   }
 
@@ -22,6 +23,17 @@ class UserController {
         throw Boom.boomify(error, { statusCode: 409 });
       }
       this.logger.error(`Unexpected error at create(): ${error.message}`);
+      throw Boom.internal();
+    }
+  }
+
+  async forgot(request, h) {
+    try {
+      const { email } = request.payload;
+      await this.forgotPasswordInteractor.execute(email);
+      return h.response().code(200);
+    } catch (error) {
+      this.logger.error(`Unexpected error at forgot(): ${error.message}`);
       throw Boom.internal();
     }
   }
