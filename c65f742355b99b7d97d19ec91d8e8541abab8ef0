@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "13c7593e_e968429f",
+        "filename": "esm/interactors/CreateUser.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-06T13:24:39Z",
+      "side": 1,
+      "message": "Change message to inform that password and email must be different, according to `PasswordValidator.is().not().oneOf([email])` rule.",
+      "revId": "c65f742355b99b7d97d19ec91d8e8541abab8ef0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
