@@ -67,6 +67,20 @@ class Server {
           },
         },
       },
+      {
+        method: 'POST',
+        path: '/reset',
+        handler: this.userController.reset.bind(this.userController),
+        options: {
+          validate: {
+            payload: Joi.object({
+              email: Joi.string().email().required(),
+              token: Joi.string().required(),
+              password: Joi.string().required(),
+            }),
+          },
+        },
+      },
     ];
   }
 }
