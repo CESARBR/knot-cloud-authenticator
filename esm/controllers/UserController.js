@@ -2,11 +2,13 @@ import Boom from 'boom';
 
 import InvalidPasswordError from 'entities/InvalidPasswordError';
 import UserExistsError from 'entities/UserExistsError';
+import InvalidResetTokenError from 'interactors/InvalidResetTokenError';
 
 class UserController {
-  constructor(createUserInteractor, forgotPasswordInteractor, logger) {
+  constructor(createUserInteractor, forgotPasswordInteractor, resetPasswordInteractor, logger) {
     this.createUserInteractor = createUserInteractor;
     this.forgotPasswordInteractor = forgotPasswordInteractor;
+    this.resetPasswordInteractor = resetPasswordInteractor;
     this.logger = logger;
   }
 
@@ -38,11 +40,30 @@ class UserController {
     }
   }
 
+  async reset(request, h) {
+    try {
+      const { uuid, token, password } = this.mapResetRequest(request);
+      await this.resetPasswordInteractor.execute(uuid, token, password);
+      return h.response().code(200);
+    } catch (error) {
+      if (error instanceof InvalidPasswordError
+        || error instanceof InvalidResetTokenError) {
+        throw Boom.boomify(error, { statusCode: 400 });
+      }
+      this.logger.error(`Unexpected error at reset(): ${error.message}`);
+      throw Boom.internal();
+    }
+  }
+
   mapCreateRequest(request) {
     return request.payload;
   }
 
   mapForgotRequest(request) {
+    return request.payload;
+  }
+
+  mapResetRequest(request) {
     return request.payload;
   }
 

@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import bcrypt from 'bcrypt';
 import moment from 'moment';
 
 import User from 'entities/User';
@@ -37,8 +38,8 @@ class UserStore {
   }
 
   async update(user) {
-    const device = await this.findDevice({ email: user.email });
-    this.updateDeviceWithUser(device, user);
+    let device = await this.findDevice({ email: user.email });
+    device = await this.updateDevice(device, user);
     return new Promise((resolve, reject) => {
       this.meshbluHttp.update(device.uuid, device, (error) => {
         if (error) {
@@ -77,12 +78,12 @@ class UserStore {
   }
 
   getAuthData(device) {
-    return device[this.meshbluAuthenticator.authenticatorUuid];
+    return _.cloneDeep(device[this.meshbluAuthenticator.authenticatorUuid]);
   }
 
   setAuthData(device, authData) {
     // eslint-disable-next-line no-param-reassign
-    device[this.meshbluAuthenticator.authenticatorUuid] = authData;
+    device[this.meshbluAuthenticator.authenticatorUuid] = _.cloneDeep(authData);
   }
 
   isValid(device) {
@@ -102,13 +103,32 @@ class UserStore {
     return signedAuthData;
   }
 
-  updateDeviceWithUser(device, user) {
-    const authData = this.getAuthData(device);
-    authData.resetExpiration = user.resetExpiration
-      ? user.resetExpiration.toJSON()
-      : undefined;
-    authData.resetToken = user.resetToken;
-    this.setAuthData(device, this.sign(authData));
+  async updateDevice(device, user) {
+    const updatedDevice = _.cloneDeep(device);
+    let authData = this.getAuthData(updatedDevice);
+    authData = this.updateResetData(authData, user);
+    authData = await this.updatePassword(authData, user);
+    authData = this.sign(authData);
+    this.setAuthData(updatedDevice, authData);
+    return updatedDevice;
+  }
+
+  updateResetData(authData, user) {
+    const updatedAuthData = _.omit(authData, 'resetExpiration', 'resetToken');
+    if (user.resetExpiration) {
+      updatedAuthData.resetExpiration = user.resetExpiration.toJSON();
+      updatedAuthData.resetToken = user.resetToken;
+    }
+    return updatedAuthData;
+  }
+
+  async updatePassword(authData, user) {
+    if (!user.password) {
+      return authData;
+    }
+    const updatedAuthData = _.omit(authData, 'secret');
+    updatedAuthData.secret = await bcrypt.hash(user.password + user.uuid, 10);
+    return updatedAuthData;
   }
 
   mapDeviceToUser(device) {
@@ -123,6 +143,7 @@ class UserStore {
       device.token,
       authData.resetToken,
       resetExpiration,
+      // don't return password
     );
   }
 

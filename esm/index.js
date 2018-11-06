@@ -4,6 +4,7 @@ import UserStoreFactory from 'data/UserStoreFactory';
 import MailServiceFactory from 'network/MailServiceFactory';
 import CreateUser from 'interactors/CreateUser';
 import ForgotPassword from 'interactors/ForgotPassword';
+import ResetPassword from 'interactors/ResetPassword';
 import UserController from 'controllers/UserController';
 import Server from 'Server';
 
@@ -20,9 +21,11 @@ async function main() {
       settings.server.resetUri,
       loggerFactory.create(settings, 'ForgotPassword'),
     );
+    const resetPassword = new ResetPassword(userStore);
     const userController = new UserController(
       createUser,
       forgotPassword,
+      resetPassword,
       loggerFactory.create(settings, 'UserController'),
     );
     const server = new Server(
