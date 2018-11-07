@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "32c8f34d_33c7b8ad",
+        "filename": "esm/controllers/UserController.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-07T22:01:18Z",
+      "side": 1,
+      "message": "If we receive any parameter in the header or query. But yeah, this won\u0027t probably change, I\u0027m removing these duplicates.",
+      "parentUuid": "766fa4fe_5b74ec33",
+      "revId": "8fe6fdde8f144238edab761bb4676c6567522f1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0bf64977_645f7661",
         "filename": "esm/data/UserStore.js",
         "patchSetId": 3
@@ -30,6 +48,30 @@
       "writtenOn": "2018-11-06T13:46:25Z",
       "side": 1,
       "message": "Mixing two different purposes on commit, refactor how the operations is done and creating the route itself.\nThis kind of change could be in a separate commit or in the first one.",
+      "range": {
+        "startLine": 20,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 43
+      },
+      "revId": "8fe6fdde8f144238edab761bb4676c6567522f1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0957a014_be1b7792",
+        "filename": "esm/data/UserStore.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-07T22:01:18Z",
+      "side": 1,
+      "message": "Moved to the previous commit.",
+      "parentUuid": "0bf64977_645f7661",
       "range": {
         "startLine": 20,
         "startChar": 8,
