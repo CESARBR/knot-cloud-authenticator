@@ -104,6 +104,30 @@
       "revId": "8fe6fdde8f144238edab761bb4676c6567522f1e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05a53e9f_efa61af4",
+        "filename": "esm/interactors/ForgotPassword.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-07T22:26:21Z",
+      "side": 1,
+      "message": "Moved to config, didn\u0027t set a default value.",
+      "parentUuid": "0bc9ac7c_d968472b",
+      "range": {
+        "startLine": 6,
+        "startChar": 6,
+        "endLine": 6,
+        "endChar": 41
+      },
+      "revId": "8fe6fdde8f144238edab761bb4676c6567522f1e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
