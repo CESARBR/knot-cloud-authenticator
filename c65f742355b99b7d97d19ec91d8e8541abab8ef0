@@ -16,6 +16,24 @@
       "revId": "c65f742355b99b7d97d19ec91d8e8541abab8ef0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b1ad45a2_951d64f8",
+        "filename": "esm/interactors/CreateUser.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-07T22:01:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13c7593e_e968429f",
+      "revId": "c65f742355b99b7d97d19ec91d8e8541abab8ef0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
