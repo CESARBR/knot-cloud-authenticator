@@ -22,6 +22,30 @@
       "revId": "bdf091d5aa6ade902bc68c2cc1a3091f8a9ac434",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1e71e4d_8f59d69e",
+        "filename": "esm/interactors/ResetPassword.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-08T14:01:41Z",
+      "side": 1,
+      "message": "Yes, the security must be in the layer below. This endpoint must be accessed using HTTPS.",
+      "parentUuid": "35abaf68_39ced7fd",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 29
+      },
+      "revId": "bdf091d5aa6ade902bc68c2cc1a3091f8a9ac434",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
