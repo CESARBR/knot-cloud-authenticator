@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import User from 'entities/User';
 import UserExistsError from 'entities/UserExistsError';
+import UnauthorizedError from '../entities/UnauthorizedError';
 
 class UserStore {
   constructor(meshbluAuthenticator, meshbluHttp) {
@@ -14,6 +15,25 @@ class UserStore {
   async get(query) {
     const device = await this.findDevice(query);
     return device && this.mapDeviceToUser(device);
+  }
+
+  async getVerified(query, password) {
+    return new Promise((resolve, reject) => {
+      const meshbluQuery = this.buildMeshbluQuery(query);
+      this.meshbluAuthenticator.findVerified({ query: meshbluQuery, password }, (error, device) => {
+        if (error) {
+          reject(this.mapError(error));
+          return;
+        }
+
+        if (!device) {
+          reject(new UnauthorizedError('Invalid e-mail or password'));
+          return;
+        }
+
+        resolve(this.mapDeviceToUser(device));
+      });
+    });
   }
 
   async create(user) {
@@ -65,6 +85,19 @@ class UserStore {
           .first() // shouldn't exist more than one
           .value();
         resolve(device);
+      });
+    });
+  }
+
+  async generateAndStoreToken(user) {
+    return new Promise((resolve, reject) => {
+      this.meshbluHttp.generateAndStoreToken(user.uuid, async (error, userToken) => {
+        if (error) {
+          reject(this.mapError(error));
+          return;
+        }
+
+        resolve(userToken);
       });
     });
   }
