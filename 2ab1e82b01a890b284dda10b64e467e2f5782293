@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2289690e_f6e2b768",
+        "filename": "esm/data/UserStore.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-08T19:24:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "564b8a2e_cc199f16",
+      "range": {
+        "startLine": 83,
+        "startChar": 40,
+        "endLine": 83,
+        "endChar": 65
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f50108ec_9f61d592",
         "filename": "esm/index.js",
         "patchSetId": 3
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-08T17:43:01Z",
       "side": 1,
       "message": "I\u0027m using the class name as label.",
+      "range": {
+        "startLine": 29,
+        "startChar": 38,
+        "endLine": 29,
+        "endChar": 48
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a56ebce7_9b76bc21",
+        "filename": "esm/index.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-08T19:24:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f50108ec_9f61d592",
       "range": {
         "startLine": 29,
         "startChar": 38,
@@ -71,6 +119,30 @@
     },
     {
       "key": {
+        "uuid": "82645d8b_58fe2392",
+        "filename": "esm/interactors/LoginUser.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-08T19:24:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40ab7ac5_4048022c",
+      "range": {
+        "startLine": 8,
+        "startChar": 25,
+        "endLine": 8,
+        "endChar": 58
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b0ba2e5d_f9e06369",
         "filename": "esm/interactors/LoginUser.js",
         "patchSetId": 3
@@ -82,6 +154,30 @@
       "writtenOn": "2018-11-08T17:43:01Z",
       "side": 1,
       "message": "Also this method should receive/return an User",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 47
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ec8de7a_791a8486",
+        "filename": "esm/interactors/LoginUser.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-08T19:24:12Z",
+      "side": 1,
+      "message": "Done. Obs: I\u0027m returning a simple object with `uuid` and `token` fields.",
+      "parentUuid": "b0ba2e5d_f9e06369",
       "range": {
         "startLine": 14,
         "startChar": 11,
