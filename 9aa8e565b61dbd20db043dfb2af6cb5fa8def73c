@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "23b3dcaa_3e5a0017",
+        "filename": "esm/entities/User.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2018-11-08T19:14:54Z",
+      "side": 1,
+      "message": "Shouldn\u0027t we use an email validator too?",
+      "range": {
+        "startLine": 1,
+        "startChar": 7,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "9aa8e565b61dbd20db043dfb2af6cb5fa8def73c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
