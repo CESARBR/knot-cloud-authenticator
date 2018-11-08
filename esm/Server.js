@@ -81,6 +81,19 @@ class Server {
           },
         },
       },
+      {
+        method: 'POST',
+        path: '/auth',
+        handler: this.userController.login.bind(this.userController),
+        options: {
+          validate: {
+            payload: Joi.object({
+              email: Joi.string().email(),
+              password: Joi.string(),
+            }),
+          },
+        },
+      },
     ];
   }
 }

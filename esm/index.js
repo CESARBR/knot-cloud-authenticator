@@ -5,6 +5,7 @@ import MailServiceFactory from 'network/MailServiceFactory';
 import CreateUser from 'interactors/CreateUser';
 import ForgotPassword from 'interactors/ForgotPassword';
 import ResetPassword from 'interactors/ResetPassword';
+import LoginUser from 'interactors/LoginUser';
 import UserController from 'controllers/UserController';
 import Server from 'Server';
 
@@ -23,12 +24,19 @@ async function main() {
       loggerFactory.create(settings, 'ForgotPassword'),
     );
     const resetPassword = new ResetPassword(userStore);
+    const loginUser = new LoginUser(
+      userStore,
+      loggerFactory.create(settings, 'LoginUser'),
+    );
+
     const userController = new UserController(
       createUser,
       forgotPassword,
       resetPassword,
+      loginUser,
       loggerFactory.create(settings, 'UserController'),
     );
+
     const server = new Server(
       settings.server.port,
       userController,
