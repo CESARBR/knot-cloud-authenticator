@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "35abaf68_39ced7fd",
+        "filename": "esm/interactors/ResetPassword.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2018-11-08T13:57:13Z",
+      "side": 1,
+      "message": "Should we send the password in plain text?\nCould it be expected as a base64 str at least to avoid it being read by anyone sniffing?",
+      "range": {
+        "startLine": 16,
+        "startChar": 4,
+        "endLine": 16,
+        "endChar": 29
+      },
+      "revId": "bdf091d5aa6ade902bc68c2cc1a3091f8a9ac434",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
