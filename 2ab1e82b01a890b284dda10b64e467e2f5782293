@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "564b8a2e_cc199f16",
+        "filename": "esm/data/UserStore.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-08T17:43:01Z",
+      "side": 1,
+      "message": "Invalid e-mail or password",
+      "range": {
+        "startLine": 83,
+        "startChar": 40,
+        "endLine": 83,
+        "endChar": 65
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f50108ec_9f61d592",
+        "filename": "esm/index.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-08T17:43:01Z",
+      "side": 1,
+      "message": "I\u0027m using the class name as label.",
+      "range": {
+        "startLine": 29,
+        "startChar": 38,
+        "endLine": 29,
+        "endChar": 48
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40ab7ac5_4048022c",
+        "filename": "esm/interactors/LoginUser.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-08T17:43:01Z",
+      "side": 1,
+      "message": "The UserStore should export only User instances. We could reuse the `get` method (in which when the user passes a password, it uses findVerified instead of devices) or create the `getVerified` that does this separately.",
+      "range": {
+        "startLine": 8,
+        "startChar": 25,
+        "endLine": 8,
+        "endChar": 58
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b0ba2e5d_f9e06369",
+        "filename": "esm/interactors/LoginUser.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-08T17:43:01Z",
+      "side": 1,
+      "message": "Also this method should receive/return an User",
+      "range": {
+        "startLine": 14,
+        "startChar": 11,
+        "endLine": 14,
+        "endChar": 47
+      },
+      "revId": "2ab1e82b01a890b284dda10b64e467e2f5782293",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
