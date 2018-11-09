@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7429e8e8_055b0b98",
+        "filename": "package.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2018-11-09T02:08:01Z",
+      "side": 1,
+      "message": "Should babel-node be used on start, like on start:watch and :debug ?",
+      "range": {
+        "startLine": 16,
+        "startChar": 3,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "c7758c2fe45d7bc1ad0c3fef4194b195d8793906",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
