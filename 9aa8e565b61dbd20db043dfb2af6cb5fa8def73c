@@ -22,6 +22,30 @@
       "revId": "9aa8e565b61dbd20db043dfb2af6cb5fa8def73c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "887c976b_a68ddc8c",
+        "filename": "esm/entities/User.js",
+        "patchSetId": 9
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-12T23:58:04Z",
+      "side": 1,
+      "message": "I\u0027m considering that the e-mail is already validated before it gets here (it is a data format issue). The password validator is needed because besides data format issues (e.g. it must be a string, have at least 8 characters, etc) it has other validations that aren\u0027t easily done upfront (such as it must be different of the e-mail address).",
+      "parentUuid": "23b3dcaa_3e5a0017",
+      "range": {
+        "startLine": 1,
+        "startChar": 7,
+        "endLine": 1,
+        "endChar": 24
+      },
+      "revId": "9aa8e565b61dbd20db043dfb2af6cb5fa8def73c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
