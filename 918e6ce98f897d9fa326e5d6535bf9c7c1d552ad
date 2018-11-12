@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2456316a_ec8f5386",
+        "filename": "esm/controllers/UserController.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-12T16:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dc4d17c_1610d531",
+      "range": {
+        "startLine": 6,
+        "startChar": 30,
+        "endLine": 6,
+        "endChar": 62
+      },
+      "revId": "918e6ce98f897d9fa326e5d6535bf9c7c1d552ad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4942379f_1ed1a0b1",
         "filename": "esm/data/UserStore.js",
         "patchSetId": 5
@@ -36,6 +60,30 @@
       "writtenOn": "2018-11-09T20:49:14Z",
       "side": 1,
       "message": "Same path issue here.",
+      "range": {
+        "startLine": 7,
+        "startChar": 30,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "918e6ce98f897d9fa326e5d6535bf9c7c1d552ad",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0bcb1355_9f02f4aa",
+        "filename": "esm/data/UserStore.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1013169
+      },
+      "writtenOn": "2018-11-12T16:16:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4942379f_1ed1a0b1",
       "range": {
         "startLine": 7,
         "startChar": 30,
