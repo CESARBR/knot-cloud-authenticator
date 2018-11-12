@@ -22,6 +22,30 @@
       "revId": "c7758c2fe45d7bc1ad0c3fef4194b195d8793906",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76123076_7fea1649",
+        "filename": "package.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-12T23:54:47Z",
+      "side": 1,
+      "message": "No, because `start` is the production script. Babel is only needed during development, to avoid having to build the code before running it (babel-node does this automatically).",
+      "parentUuid": "7429e8e8_055b0b98",
+      "range": {
+        "startLine": 16,
+        "startChar": 3,
+        "endLine": 16,
+        "endChar": 23
+      },
+      "revId": "c7758c2fe45d7bc1ad0c3fef4194b195d8793906",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
