@@ -22,6 +22,30 @@
       "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f31832f2_f5329b51",
+        "filename": "esm/interactors/ForgotPassword.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-13T00:05:33Z",
+      "side": 1,
+      "message": "UUID is as unsecure as the e-mail. Only the combination of UUID+token poses a security risk. I could use the e-mail instead of UUID, but UUID provides a direct search later at /reset. If I use the e-mail, I must search for devices with a given e-mail and then verify if that device was properly signed (because one could create another device with the same e-mail). As I already have the UUID now, I decided to use it (the user won\u0027t have to deal with this information).\n\nWould it be better to change to e-mail?",
+      "parentUuid": "9fce544a_e3769f23",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 73
+      },
+      "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
