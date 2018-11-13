@@ -46,6 +46,30 @@
       "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14431bb4_5744fbdf",
+        "filename": "esm/interactors/ForgotPassword.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2018-11-13T00:56:10Z",
+      "side": 1,
+      "message": "Understood and agree on the fact that is easier (and as (in)secure as using the e-mail) to use the UUID.\n\nHowever, thinking on future developments, in which we may have some other cloud service, I think it\u0027s good for us to keep in mind that some other form that is more generic than UUID might be necessary.\n\nAlso, is it going to be allowed to have more than one user per e-mail (maybe it\u0027s a concern that should have come in a different patch, but since it came up here, just raising the point)?",
+      "parentUuid": "f31832f2_f5329b51",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 73
+      },
+      "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
