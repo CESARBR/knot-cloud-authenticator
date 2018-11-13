@@ -94,6 +94,30 @@
       "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ec699863_fddc6018",
+        "filename": "esm/interactors/ForgotPassword.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-13T19:46:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "74d26e12_60ba4ab9",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 73
+      },
+      "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
