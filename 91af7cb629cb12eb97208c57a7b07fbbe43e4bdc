@@ -70,6 +70,30 @@
       "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "74d26e12_60ba4ab9",
+        "filename": "esm/interactors/ForgotPassword.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2018-11-13T13:56:09Z",
+      "side": 1,
+      "message": "I\u0027ll change to use the e-mail in order to hide the UUID which is implementation specific.\nRegarding the concern about different cloud services, we won\u0027t handle the user account. About multiple users per e-mail, no, we shouldn\u0027t support that, what I was raising is if someone hacks into the meshblu and create a device with the same structure and using an existing e-mail.",
+      "parentUuid": "14431bb4_5744fbdf",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 73
+      },
+      "revId": "91af7cb629cb12eb97208c57a7b07fbbe43e4bdc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
