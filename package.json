@@ -1,10 +1,10 @@
 {
   "name": "knot-cloud-authenticator",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "KNoT Cloud authenticator",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/CESARBR/knot-cloud-authenticator.git"
+    "url": "git+https://github.com/CESARBR/knot-cloud-authenticator.git"
   },
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
