@@ -1,6 +1,31 @@
 import config from 'config';
+import Joi from 'joi';
+import _ from 'lodash';
 
 import Settings from 'data/Settings';
+
+const serverSchema = Joi.object().keys({
+  port: Joi.number().port().required(),
+  resetSenderAddress: Joi.string().email().required(),
+  resetUri: Joi.string().uri().required(),
+});
+const meshbluSchema = Joi.object().keys({
+  protocol: Joi.string().valid(['http', 'https']).required(),
+  host: Joi.string().required(),
+  port: Joi.number().port().required(),
+});
+const authenticatorSchema = Joi.object().keys({
+  uuid: Joi.string().uuid().required(),
+  token: Joi.string().required(),
+});
+const mailgunSchema = Joi.object().keys({
+  apiKey: Joi.string().required(),
+  domain: Joi.string().required(),
+});
+const levels = ['error', 'warn', 'info', 'verbose', 'debug', 'silly'];
+const loggerSchema = Joi.object().keys({
+  level: Joi.string().valid(levels).required(),
+});
 
 class SettingsFactory {
   create() {
@@ -13,64 +38,48 @@ class SettingsFactory {
   }
 
   loadServerSettings() {
-    if (!config.get('server')) {
-      throw new Error('Missing server settings');
-    }
     const server = config.get('server');
-    if (!server.port
-      || !server.resetSenderAddress
-      || !server.resetUri) {
-      throw new Error('Missing server settings');
-    }
+    this.validate('server', server, serverSchema);
     return server;
   }
 
   loadMeshbluSettings() {
-    if (!config.has('meshblu')) {
-      throw new Error('Missing Meshblu settings');
-    }
     const meshblu = config.get('meshblu');
-    if (!meshblu.protocol
-      || !meshblu.host
-      || !meshblu.port) {
-      throw new Error('Missing Meshblu settings');
-    }
+    this.validate('meshblu', meshblu, meshbluSchema);
     return meshblu;
   }
 
   loadAuthenticatorSettings() {
-    if (!config.has('authenticator')) {
-      throw new Error('Missing authenticator settings');
-    }
     const authenticator = config.get('authenticator');
-    if (!authenticator.uuid
-      || !authenticator.token) {
-      throw new Error('Missing authenticator settings');
-    }
+    this.validate('authenticator', authenticator, authenticatorSchema);
     return authenticator;
   }
 
   loadMailgunSettings() {
-    if (!config.has('mailgun')) {
-      throw new Error('Missing Mailgun settings');
-    }
     const mailgun = config.get('mailgun');
-    if (!mailgun.apiKey
-      || !mailgun.domain) {
-      throw new Error('Missing Mailgun settings');
-    }
+    this.validate('mailgun', mailgun, mailgunSchema);
     return mailgun;
   }
 
   loadLoggerSettings() {
-    if (!config.has('logger')) {
-      throw new Error('Missing logger settings');
-    }
     const logger = config.get('logger');
-    if (!logger.level) {
-      throw new Error('Missing logger settings');
-    }
+    this.validate('logger', logger, loggerSchema);
     return logger;
+  }
+
+  validate(propertyName, propertyValue, schema) {
+    const { error } = Joi.validate(propertyValue, schema, { abortEarly: false });
+    if (error) {
+      throw this.mapJoiError(propertyName, error);
+    }
+  }
+
+  mapJoiError(propertyName, error) {
+    const reasons = _.map(error.details, 'message');
+    const formattedReasons = reasons.length > 1
+      ? `\n${_.chain(reasons).map(reason => `- ${reason}`).join('\n').value()}`
+      : reasons[0];
+    return new Error(`Invalid "${propertyName}" property: ${formattedReasons}`);
   }
 }
 
