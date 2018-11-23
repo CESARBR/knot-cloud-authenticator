@@ -1,6 +1,6 @@
 {
   "name": "knot-cloud-authenticator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "KNoT Cloud authenticator",
   "repository": {
     "type": "git",
