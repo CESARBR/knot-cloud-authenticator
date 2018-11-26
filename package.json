@@ -1,5 +1,5 @@
 {
-  "name": "knot-cloud-authenticator",
+  "name": "@cesarbr/knot-cloud-authenticator",
   "version": "1.0.2",
   "description": "KNoT Cloud authenticator",
   "repository": {
