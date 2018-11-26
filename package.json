@@ -6,16 +6,15 @@
     "type": "git",
     "url": "git+https://github.com/CESARBR/knot-cloud-authenticator.git"
   },
-  "main": "./cjs/index.js",
-  "module": "./esm/index.js",
+  "main": "./build/index.js",
   "author": "KNoT",
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "build": "babel esm --out-dir cjs",
-    "start": "node cjs",
-    "start:watch": "nodemon --exec babel-node esm",
-    "start:debug": "babel-node debug esm"
+    "build": "babel src --out-dir build",
+    "start": "node build",
+    "start:watch": "nodemon --exec babel-node src",
+    "start:debug": "babel-node debug src"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

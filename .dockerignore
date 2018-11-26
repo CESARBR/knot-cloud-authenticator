@@ -1,4 +1,4 @@
-cjs
+build
 .vscode
 node_modules
 npm-debug.log
