@@ -60,6 +60,6 @@ typings/
 # next.js build output
 .next
 
-cjs
+build
 .vscode
 config/local.json
