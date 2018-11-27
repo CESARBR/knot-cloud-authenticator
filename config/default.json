@@ -3,7 +3,7 @@
     "port": 80
   },
   "meshblu": {
-    "protocol": "https"
+    "protocol": "http"
   },
   "logger": {
     "level": "info"

@@ -25,7 +25,7 @@ class UserStoreFactory {
       uuid: authenticatorConfig.uuid,
       token: authenticatorConfig.token,
       protocol: meshbluConfig.protocol,
-      hostname: meshbluConfig.host,
+      hostname: meshbluConfig.hostname,
       port: meshbluConfig.port,
     };
     return new MeshbluHttp(meshbluHttpConfig);
