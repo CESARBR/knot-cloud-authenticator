@@ -11,6 +11,9 @@ import Server from 'Server';
 
 async function main() {
   try {
+    // eslint-disable-next-line no-console
+    console.log(`Starting '${process.env.NODE_ENV}' configuration`);
+
     const settings = new SettingsFactory().create();
     const loggerFactory = new LoggerFactory();
     const userStore = await (new UserStoreFactory()).create(settings);
