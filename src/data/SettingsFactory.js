@@ -6,12 +6,20 @@ import Settings from 'data/Settings';
 
 const serverSchema = Joi.object().keys({
   port: Joi.number().port().required(),
-  resetSenderAddress: Joi.string().email().required(),
+  resetPasswordSenderAddress: Joi.string().email(), // deprecated
+  resetSenderAddress: Joi.string().email().required().when('resetPasswordSenderAddress', {
+    is: Joi.exist(),
+    then: Joi.optional(),
+  }),
   resetUri: Joi.string().uri().required(),
 });
 const meshbluSchema = Joi.object().keys({
   protocol: Joi.string().valid(['http', 'https']).required(),
-  host: Joi.string().required(),
+  host: Joi.string(), // deprecated
+  hostname: Joi.string().required().when('host', {
+    is: Joi.exist(),
+    then: Joi.optional(),
+  }),
   port: Joi.number().port().required(),
 });
 const authenticatorSchema = Joi.object().keys({
@@ -40,13 +48,21 @@ class SettingsFactory {
   loadServerSettings() {
     const server = config.get('server');
     this.validate('server', server, serverSchema);
-    return server;
+    return { // return server object when the member marked as deprecated is removed
+      port: server.port,
+      resetSenderAddress: server.resetSenderAddress || server.resetPasswordSenderAddress,
+      resetUri: server.resetUri,
+    };
   }
 
   loadMeshbluSettings() {
     const meshblu = config.get('meshblu');
     this.validate('meshblu', meshblu, meshbluSchema);
-    return meshblu;
+    return { // return meshblu object when the member marked as deprecated is removed
+      protocol: meshblu.protocol,
+      hostname: meshblu.hostname || meshblu.host,
+      port: meshblu.port,
+    };
   }
 
   loadAuthenticatorSettings() {

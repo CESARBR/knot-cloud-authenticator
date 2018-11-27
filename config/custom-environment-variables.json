@@ -1,7 +1,8 @@
 {
   "server": {
     "port": "PORT",
-    "resetSenderAddress": "RESET_PASSWORD_SENDER_ADDRESS",
+    "resetSenderAddress": "RESET_SENDER_ADDRESS",
+    "resetPasswordSenderAddress": "RESET_PASSWORD_SENDER_ADDRESS",
     "resetUri": "RESET_URI"
   },
   "authenticator": {
@@ -11,6 +12,7 @@
   "meshblu": {
     "protocol": "MESHBLU_PROTOCOL",
     "host": "MESHBLU_HOST",
+    "hostname": "MESHBLU_HOSTNAME",
     "port": "MESHBLU_PORT"
   },
   "mailgun": {
