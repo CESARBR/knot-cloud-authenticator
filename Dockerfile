@@ -9,5 +9,7 @@ COPY . .
 RUN npm run build
 RUN npm prune --production
 
+EXPOSE 80
+
 ENV NODE_ENV=production
 CMD [ "npm", "start" ]
