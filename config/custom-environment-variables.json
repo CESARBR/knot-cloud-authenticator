@@ -18,5 +18,8 @@
   "mailgun": {
     "apiKey": "MAILGUN_API_KEY",
     "domain": "MAILGUN_DOMAIN"
+  },
+  "logger": {
+    "level": "LOGGER_LEVEL"
   }
 }
