@@ -14,7 +14,7 @@ class User {
 
   validatePassword() {
     if (!this.isPasswordValid()) {
-      throw new InvalidPasswordError('Password must be at least 8 and at most 50 characters long, contain uppercase, lowercase, digit and symbol characters and must be the e-mail address');
+      throw new InvalidPasswordError('Password must be at least 8 and at most 50 characters long, contain uppercase, lowercase, digit and symbol characters and must not be the e-mail address');
     }
   }
 
