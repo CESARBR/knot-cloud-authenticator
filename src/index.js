@@ -1,6 +1,7 @@
 import LoggerFactory from 'LoggerFactory';
 import SettingsFactory from 'data/SettingsFactory';
 import UserStoreFactory from 'data/UserStoreFactory';
+import RouterStoreFactory from 'data/RouterStoreFactory';
 import MailServiceFactory from 'network/MailServiceFactory';
 import CreateUser from 'interactors/CreateUser';
 import ForgotPassword from 'interactors/ForgotPassword';
@@ -17,8 +18,9 @@ async function main() {
     const settings = new SettingsFactory().create();
     const loggerFactory = new LoggerFactory();
     const userStore = await (new UserStoreFactory()).create(settings);
+    const routerStore = await (new RouterStoreFactory()).create(settings);
     const mailService = (new MailServiceFactory()).create(settings);
-    const createUser = new CreateUser(userStore);
+    const createUser = new CreateUser(userStore, routerStore);
     const forgotPassword = new ForgotPassword(
       userStore,
       mailService,
