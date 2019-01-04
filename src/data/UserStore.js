@@ -7,8 +7,9 @@ import UserExistsError from 'entities/UserExistsError';
 import UnauthorizedError from 'entities/UnauthorizedError';
 
 class UserStore {
-  constructor(meshbluAuthenticator, meshbluHttp) {
+  constructor(meshbluAuthenticator, meshbluHttpFactory, meshbluHttp) {
     this.meshbluAuthenticator = meshbluAuthenticator;
+    this.meshbluHttpFactory = meshbluHttpFactory;
     this.meshbluHttp = meshbluHttp;
   }
 
@@ -165,6 +166,37 @@ class UserStore {
     const updatedAuthData = _.omit(authData, 'secret');
     updatedAuthData.secret = await bcrypt.hash(user.password + user.uuid, 10);
     return updatedAuthData;
+  }
+
+  assignRouter(router, user) {
+    return new Promise((resolve, reject) => {
+      this.meshbluHttp.update(user.uuid, {
+        knot: {
+          router: router.uuid,
+        },
+      }, (error, updatedUser) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(updatedUser);
+        }
+      });
+    });
+  }
+
+  reload(user) {
+    return new Promise((resolve, reject) => {
+      const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
+      client.device(user.uuid, { as: user.uuid }, (error, userDevice) => {
+        if (error) {
+          reject(error);
+        } else {
+          const updatedUser = userDevice;
+          updatedUser.token = user.token;
+          resolve(updatedUser);
+        }
+      });
+    });
   }
 
   mapDeviceToUser(device) {
