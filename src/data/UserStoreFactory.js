@@ -1,11 +1,13 @@
-import MeshbluHttp from '@cesarbr/meshblu-http';
 import { DeviceAuthenticator } from '@cesarbr/meshblu-authenticator-core';
+
+import MeshbluHttpFactory from 'network/MeshbluHttpFactory';
 
 import UserStore from 'data/UserStore';
 
 class UserStoreFactory {
   async create(settings) {
-    const meshbluHttp = this.createMeshbluHttp(settings.meshblu, settings.authenticator);
+    const meshbluHttpFactory = new MeshbluHttpFactory(settings.meshblu);
+    const meshbluHttp = meshbluHttpFactory.create(settings.authenticator);
     const authenticatorDevice = await this.getAuthenticatorDevice(
       meshbluHttp,
       settings.authenticator.uuid,
@@ -17,18 +19,7 @@ class UserStoreFactory {
       authenticatorName: 'KNoT Authenticator',
       meshbluHttp,
     });
-    return new UserStore(authenticator, meshbluHttp);
-  }
-
-  createMeshbluHttp(meshbluConfig, authenticatorConfig) {
-    const meshbluHttpConfig = {
-      uuid: authenticatorConfig.uuid,
-      token: authenticatorConfig.token,
-      protocol: meshbluConfig.protocol,
-      hostname: meshbluConfig.hostname,
-      port: meshbluConfig.port,
-    };
-    return new MeshbluHttp(meshbluHttpConfig);
+    return new UserStore(authenticator, meshbluHttpFactory, meshbluHttp);
   }
 
   async getAuthenticatorDevice(meshbluHttp, authenticatorUuid) {
