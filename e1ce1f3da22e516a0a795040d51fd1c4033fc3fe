@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4460cf54_ccb2809f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2019-01-04T13:07:46Z",
+      "side": 1,
+      "message": "Explain why we need this router when every user be created",
+      "revId": "e1ce1f3da22e516a0a795040d51fd1c4033fc3fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
