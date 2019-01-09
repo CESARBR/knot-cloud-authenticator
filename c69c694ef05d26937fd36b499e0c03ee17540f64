@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "696c17d0_711b44f3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2019-01-09T15:38:16Z",
+      "side": 1,
+      "message": "constant updates in devices whitelists.\n\nWhat do you think about this change?",
+      "range": {
+        "startLine": 11,
+        "startChar": 9,
+        "endLine": 11,
+        "endChar": 63
+      },
+      "revId": "c69c694ef05d26937fd36b499e0c03ee17540f64",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
