@@ -62,7 +62,7 @@ class UserStore {
     let device = await this.findDevice({ email: user.email });
     device = await this.updateDevice(device, user);
     return new Promise((resolve, reject) => {
-      this.meshbluHttp.update(device.uuid, device, (error) => {
+      this.meshbluHttpClient.update(device.uuid, device, (error) => {
         if (error) {
           reject(error);
         } else {
@@ -75,7 +75,7 @@ class UserStore {
   async findDevice(query) {
     return new Promise((resolve, reject) => {
       const meshbluQuery = this.buildMeshbluQuery(query);
-      this.meshbluHttp.devices(meshbluQuery, (error, devices) => {
+      this.meshbluHttpClient.devices(meshbluQuery, (error, devices) => {
         if (error) {
           reject(this.mapError(error));
           return;
@@ -92,7 +92,7 @@ class UserStore {
 
   async generateAndStoreToken(user) {
     return new Promise((resolve, reject) => {
-      this.meshbluHttp.generateAndStoreToken(user.uuid, async (error, userToken) => {
+      this.meshbluHttpClient.generateAndStoreToken(user.uuid, async (error, userToken) => {
         if (error) {
           reject(this.mapError(error));
           return;
@@ -128,7 +128,7 @@ class UserStore {
     if (!authData || !authData.signature) {
       return false;
     }
-    return this.meshbluHttp.verify(
+    return this.meshbluHttpClient.verify(
       _.omit(authData, 'signature'),
       authData.signature,
     );
@@ -136,7 +136,7 @@ class UserStore {
 
   sign(authData) {
     const signedAuthData = _.cloneDeep(authData);
-    signedAuthData.signature = this.meshbluHttp.sign(_.omit(signedAuthData, 'signature'));
+    signedAuthData.signature = this.meshbluHttpClient.sign(_.omit(signedAuthData, 'signature'));
     return signedAuthData;
   }
 
@@ -170,7 +170,7 @@ class UserStore {
 
   async assignRouter(router, user) {
     return new Promise((resolve, reject) => {
-      this.meshbluHttp.update(user.uuid, {
+      this.meshbluHttpClient.update(user.uuid, {
         knot: {
           router: router.uuid,
         },
