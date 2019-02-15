@@ -48,6 +48,54 @@
     },
     {
       "key": {
+        "uuid": "e74dbd75_efc0fc81",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-02-15T18:59:31Z",
+      "side": 1,
+      "message": "No need to update the counter, it will be correctly rendered",
+      "parentUuid": "815f272d_f4f48333",
+      "range": {
+        "startLine": 83,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 2
+      },
+      "revId": "d5aa9f7e101bb9a9a8c4cb07c3b8d1efe2dc4b79",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4977ae7f_b3675689",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-02-15T18:59:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "82ccebb5_927a8490",
+      "range": {
+        "startLine": 83,
+        "startChar": 17,
+        "endLine": 83,
+        "endChar": 29
+      },
+      "revId": "d5aa9f7e101bb9a9a8c4cb07c3b8d1efe2dc4b79",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5c24226f_96dddb22",
         "filename": "README.md",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2019-02-14T17:55:54Z",
       "side": 1,
       "message": "3.",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 2
+      },
+      "revId": "d5aa9f7e101bb9a9a8c4cb07c3b8d1efe2dc4b79",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "684d258c_359b7ee8",
+        "filename": "README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-02-15T18:59:31Z",
+      "side": 1,
+      "message": "No need to update the counter, it will be correctly rendered",
+      "parentUuid": "5c24226f_96dddb22",
       "range": {
         "startLine": 84,
         "startChar": 0,
