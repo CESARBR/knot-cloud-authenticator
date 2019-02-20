@@ -201,7 +201,9 @@ class UserStore {
   async createSubscriptions(user, router) {
     const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
     await this.subscribeOwn(client, user.uuid, 'broadcast.received', user);
+    await this.subscribeOwn(client, user.uuid, 'unregister.received', user);
     await this.subscribe(client, user.uuid, router.uuid, 'broadcast.sent', user);
+    await this.subscribe(client, router.uuid, user.uuid, 'unregister.received', user);
     await this.subscribe(client, router.uuid, user.uuid, 'broadcast.received', user);
   }
 
