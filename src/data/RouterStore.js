@@ -16,8 +16,12 @@ class RouterStore {
             },
             configure: {
               update: [{ uuid: user.uuid }],
+              received: [{ uuid: user.uuid }],
             },
             broadcast: {
+              received: [{ uuid: user.uuid }],
+            },
+            unregister: {
               received: [{ uuid: user.uuid }],
             },
           },
