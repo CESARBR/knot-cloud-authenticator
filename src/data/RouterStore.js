@@ -17,6 +17,9 @@ class RouterStore {
             configure: {
               update: [{ uuid: user.uuid }],
             },
+            broadcast: {
+              received: [{ uuid: user.uuid }],
+            },
           },
         },
       };
@@ -49,6 +52,7 @@ class RouterStore {
 
   async createSubscriptions(router, user) {
     const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
+    await this.subscribeOwn(client, user.uuid, 'broadcast.received', user);
     await this.subscribeOwn(client, router.uuid, 'broadcast.received', user);
     await this.subscribeOwn(client, router.uuid, 'configure.received', user);
   }
