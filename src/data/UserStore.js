@@ -184,16 +184,61 @@ class UserStore {
     });
   }
 
-  async reload(user) {
+  async updateWhitelists(user, router) {
     return new Promise((resolve, reject) => {
-      const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
-      client.device(user.uuid, { as: user.uuid }, (error, userDevice) => {
+      this.meshbluHttpClient.update(user.uuid, {
+        'meshblu.whitelists.broadcast.sent': [{ uuid: router.uuid }],
+      }, (error, updatedUser) => {
         if (error) {
           reject(error);
         } else {
-          const updatedUser = userDevice;
-          updatedUser.token = user.token;
           resolve(updatedUser);
+        }
+      });
+    });
+  }
+
+  async createSubscriptions(user, router) {
+    const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
+    await this.subscribeOwn(client, user.uuid, 'broadcast.received', user);
+    await this.subscribe(client, user.uuid, router.uuid, 'broadcast.sent', user);
+    await this.subscribe(client, router.uuid, user.uuid, 'broadcast.received', user);
+  }
+
+  async subscribeOwn(client, uuid, type, as) {
+    await this.subscribe(client, uuid, uuid, type, as);
+  }
+
+  async subscribe(client, from, to, type, as) {
+    return new Promise((resolve, reject) => {
+      client.createSubscription({
+        subscriberUuid: to,
+        emitterUuid: from,
+        type,
+      }, { as: as.uuid }, (error) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve();
+        }
+      });
+    });
+  }
+
+  async reload(user) {
+    const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
+    const device = await this.getDevice(client, user.uuid, user.uuid);
+    device.token = user.token;
+    return device;
+  }
+
+  async getDevice(client, uuid, as) {
+    return new Promise((resolve, reject) => {
+      client.device(uuid, { as }, async (error, userDevice) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(userDevice);
         }
       });
     });
