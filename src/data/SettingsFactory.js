@@ -26,9 +26,14 @@ const authenticatorSchema = Joi.object().keys({
   uuid: Joi.string().uuid().required(),
   token: Joi.string().required(),
 });
+const mailServices = ['MAILGUN'];
+const mailServiceSchema = Joi.string().valid(mailServices).required();
 const mailgunSchema = Joi.object().keys({
-  apiKey: Joi.string().required(),
-  domain: Joi.string().required(),
+  apiKey: Joi.string(),
+  domain: Joi.string(),
+}).with('apiKey', 'domain').when('mailServiceSchema', {
+  is: 'MAILGUN',
+  then: Joi.required(),
 });
 const levels = ['error', 'warn', 'info', 'verbose', 'debug', 'silly'];
 const loggerSchema = Joi.object().keys({
@@ -40,9 +45,10 @@ class SettingsFactory {
     const server = this.loadServerSettings();
     const meshblu = this.loadMeshbluSettings();
     const authenticator = this.loadAuthenticatorSettings();
+    const mailService = this.loadMailServiceSettings();
     const mailgun = this.loadMailgunSettings();
     const logger = this.loadLoggerSettings();
-    return new Settings(server, meshblu, authenticator, mailgun, logger);
+    return new Settings(server, meshblu, authenticator, mailService, mailgun, logger);
   }
 
   loadServerSettings() {
@@ -71,10 +77,20 @@ class SettingsFactory {
     return authenticator;
   }
 
+  loadMailServiceSettings() {
+    const mailService = config.get('mailService');
+    this.validate('mailService', mailService, mailServiceSchema);
+    return mailService;
+  }
+
   loadMailgunSettings() {
-    const mailgun = config.get('mailgun');
-    this.validate('mailgun', mailgun, mailgunSchema);
-    return mailgun;
+    if (config.has('mailgun')) {
+      const mailgun = config.get('mailgun');
+      this.validate('mailgun', mailgun, mailgunSchema);
+      return mailgun;
+    }
+    // return null if 'mailgun' property does not exist on config
+    return null;
   }
 
   loadLoggerSettings() {
