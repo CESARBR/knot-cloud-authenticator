@@ -1,4 +1,4 @@
-class MailService {
+class MailgunMailService {
   constructor(mailgun) {
     this.mailgun = mailgun;
   }
@@ -21,4 +21,4 @@ class MailService {
   }
 }
 
-export default MailService;
+export default MailgunMailService;

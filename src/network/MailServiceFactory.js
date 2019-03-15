@@ -1,11 +1,11 @@
 import Mailgun from 'mailgun-js';
 
-import MailService from 'network/MailService';
+import MailgunMailService from 'network/MailgunMailService';
 
 class MailServiceFactory {
   create(settings) {
     const mailgun = new Mailgun(settings.mailgun);
-    return new MailService(mailgun);
+    return new MailgunMailService(mailgun);
   }
 }
 
