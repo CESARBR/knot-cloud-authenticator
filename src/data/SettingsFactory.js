@@ -26,13 +26,19 @@ const authenticatorSchema = Joi.object().keys({
   uuid: Joi.string().uuid().required(),
   token: Joi.string().required(),
 });
-const mailServices = ['MAILGUN'];
+const mailServices = ['MAILGUN', 'AWS-SES'];
 const mailServiceSchema = Joi.string().valid(mailServices).required();
 const mailgunSchema = Joi.object().keys({
   apiKey: Joi.string(),
   domain: Joi.string(),
 }).with('apiKey', 'domain').when('mailServiceSchema', {
   is: 'MAILGUN',
+  then: Joi.required(),
+});
+const awsSchema = Joi.object().keys({
+  region: Joi.string().required(),
+}).when('mailServiceSchema', {
+  is: 'AWS-SES',
   then: Joi.required(),
 });
 const levels = ['error', 'warn', 'info', 'verbose', 'debug', 'silly'];
@@ -77,9 +83,17 @@ class SettingsFactory {
     return authenticator;
   }
 
+  checkForAWSMailService() {
+    if (config.has('aws-ses')) {
+      const aws = config.get('aws-ses');
+      this.validate('aws-ses', aws, awsSchema);
+    }
+  }
+
   loadMailServiceSettings() {
     const mailService = config.get('mailService');
     this.validate('mailService', mailService, mailServiceSchema);
+    this.checkForAWSMailService();
     return mailService;
   }
 
