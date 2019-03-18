@@ -20,6 +20,9 @@
     "apiKey": "MAILGUN_API_KEY",
     "domain": "MAILGUN_DOMAIN"
   },
+  "aws-ses":{
+    "region": "AWS_REGION"
+  },
   "logger": {
     "level": "LOGGER_LEVEL"
   }

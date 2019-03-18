@@ -33,6 +33,7 @@
   "dependencies": {
     "@cesarbr/meshblu-authenticator-core": "^4.1.3",
     "@cesarbr/meshblu-http": "^10.2.4",
+    "aws-sdk": "^2.422.0",
     "bcrypt": "^3.0.2",
     "boom": "^7.2.2",
     "config": "^2.0.1",
