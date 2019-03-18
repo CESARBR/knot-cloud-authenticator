@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9307b93f_4d81ed3a",
+        "filename": "config/custom-environment-variables.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-03-18T17:01:56Z",
+      "side": 1,
+      "message": "split into two words: MAIL_SERVICE",
+      "range": {
+        "startLine": 18,
+        "startChar": 18,
+        "endLine": 18,
+        "endChar": 29
+      },
+      "revId": "91da054cd2e9e9a437b2b833188eb2a4b3d03f5a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
