@@ -21,6 +21,7 @@ const meshbluSchema = Joi.object().keys({
     then: Joi.optional(),
   }),
   port: Joi.number().port().required(),
+  webhookUri: Joi.string().uri(),
 });
 const authenticatorSchema = Joi.object().keys({
   uuid: Joi.string().uuid().required(),
@@ -62,6 +63,7 @@ class SettingsFactory {
       protocol: meshblu.protocol,
       hostname: meshblu.hostname || meshblu.host,
       port: meshblu.port,
+      webhookUri: meshblu.webhookUri
     };
   }
 

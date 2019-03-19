@@ -13,7 +13,8 @@
     "protocol": "MESHBLU_PROTOCOL",
     "host": "MESHBLU_HOST",
     "hostname": "MESHBLU_HOSTNAME",
-    "port": "MESHBLU_PORT"
+    "port": "MESHBLU_PORT",
+    "webhookUri": "MESHBLU_WEBHOOK_URI"
   },
   "mailgun": {
     "apiKey": "MAILGUN_API_KEY",
