@@ -30,6 +30,9 @@ const mailgunSchema = Joi.object().keys({
   apiKey: Joi.string().required(),
   domain: Joi.string().required(),
 });
+const storageSchema = Joi.object().keys({
+  webhookUri: Joi.string().uri(),
+});
 const levels = ['error', 'warn', 'info', 'verbose', 'debug', 'silly'];
 const loggerSchema = Joi.object().keys({
   level: Joi.string().valid(levels).required(),
@@ -42,7 +45,8 @@ class SettingsFactory {
     const authenticator = this.loadAuthenticatorSettings();
     const mailgun = this.loadMailgunSettings();
     const logger = this.loadLoggerSettings();
-    return new Settings(server, meshblu, authenticator, mailgun, logger);
+    const storage = this.loadStorageSettings();
+    return new Settings(server, meshblu, authenticator, mailgun, logger, storage);
   }
 
   loadServerSettings() {
@@ -81,6 +85,15 @@ class SettingsFactory {
     const logger = config.get('logger');
     this.validate('logger', logger, loggerSchema);
     return logger;
+  }
+
+  loadStorageSettings() {
+    if (config.has('storage')) {
+      const storage = config.get('storage');
+      this.validate('storage', storage, storageSchema);
+      return storage;
+    }
+    return null;
   }
 
   validate(propertyName, propertyValue, schema) {
