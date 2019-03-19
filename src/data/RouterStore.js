@@ -1,6 +1,7 @@
 class RouterStore {
-  constructor(meshbluHttpFactory) {
+  constructor(meshbluHttpFactory, webhookUri) {
     this.meshbluHttpFactory = meshbluHttpFactory;
+    this.webhookUri = webhookUri;
   }
 
   async create(user) {
@@ -25,6 +26,7 @@ class RouterStore {
               received: [{ uuid: user.uuid }],
             },
           },
+          forwarders: this.webhookUri ? this.buildForwarders() : undefined,
         },
       };
 
@@ -37,6 +39,23 @@ class RouterStore {
       });
     });
   }
+
+  buildForwarders() {
+    const webhook = {
+      type: 'webhook',
+      url: this.webhookUri,
+      method: 'POST',
+      signRequest: true,
+    };
+    return {
+      version: '2.0.0',
+      message: { sent: [webhook], received: [webhook] },
+      broadcast: { sent: [webhook], received: [webhook] },
+      configure: { sent: [webhook], received: [webhook] },
+      unregister: { received: [webhook] },
+    };
+  }
+
 
   async subscribeOwn(client, uuid, type, as) {
     return new Promise((resolve, reject) => {

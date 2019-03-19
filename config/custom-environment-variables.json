@@ -15,6 +15,9 @@
     "hostname": "MESHBLU_HOSTNAME",
     "port": "MESHBLU_PORT"
   },
+  "storage": {
+    "webhookUri": "STORAGE_WEBHOOK_URI"
+  },
   "mailService": "MAIL_SERVICE",
   "mailgun": {
     "apiKey": "MAILGUN_API_KEY",
