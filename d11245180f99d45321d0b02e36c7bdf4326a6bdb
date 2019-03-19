@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5164323f_ce21a9d4",
+        "filename": "src/network/SESMailService.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-03-19T14:06:35Z",
+      "side": 1,
+      "message": "I think you can call `.promise()` in every AWS SDK method to return a promise instead of using callbacks, can you verify this?\n\n`this.ses.sendEmail(params).promise()`",
+      "range": {
+        "startLine": 28,
+        "startChar": 7,
+        "endLine": 28,
+        "endChar": 51
+      },
+      "revId": "d11245180f99d45321d0b02e36c7bdf4326a6bdb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
