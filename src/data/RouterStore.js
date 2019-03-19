@@ -1,31 +1,31 @@
 class RouterStore {
-  constructor(meshbluHttpFactory) {
+  constructor(meshbluHttpFactory, webhookUri) {
     this.meshbluHttpFactory = meshbluHttpFactory;
+    this.webhookUri = webhookUri;
   }
 
   async create(user) {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       const client = this.meshbluHttpFactory.create({ uuid: user.uuid, token: user.token });
       const routerParams = {
         type: 'router',
-        meshblu: {
-          version: '2.0.0',
-          whitelists: {
-            discover: {
-              view: [{ uuid: user.uuid }],
-            },
-            configure: {
-              update: [{ uuid: user.uuid }],
-              received: [{ uuid: user.uuid }],
-            },
-            broadcast: {
-              received: [{ uuid: user.uuid }],
-            },
-            unregister: {
-              received: [{ uuid: user.uuid }],
-            },
+        version: '2.0.0',
+        whitelists: {
+          discover: {
+            view: [{ uuid: user.uuid }],
+          },
+          configure: {
+            update: [{ uuid: user.uuid }],
+            received: [{ uuid: user.uuid }],
+          },
+          broadcast: {
+            received: [{ uuid: user.uuid }],
+          },
+          unregister: {
+            received: [{ uuid: user.uuid }],
           },
         },
+        forwarders: this.webhookUri ? await this.buildForwarders() : undefined
       };
 
       client.register(routerParams, (error, routerDevice) => {
@@ -37,6 +37,22 @@ class RouterStore {
       });
     });
   }
+
+  async buildForwarders() {
+    const webhook = {
+      type: 'webhook',
+      url: this.webhookUri,
+      method: 'POST',
+    };
+    return {
+      version: '2.0.0',
+      message: { sent: [webhook], received: [webhook] },
+      broadcast: { sent: [webhook], received: [webhook] },
+      configure: { sent: [webhook], received: [webhook] },
+      unregister: { received: [webhook] },
+    };
+  }
+
 
   async subscribeOwn(client, uuid, type, as) {
     return new Promise((resolve, reject) => {
