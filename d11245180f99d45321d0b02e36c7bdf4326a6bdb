@@ -48,6 +48,30 @@
     },
     {
       "key": {
+        "uuid": "25ddd9e2_5f965469",
+        "filename": "src/network/SESMailService.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-03-20T17:08:31Z",
+      "side": 1,
+      "message": "prefer const if not going to change the variable value.",
+      "parentUuid": "cbf0fea5_81361acb",
+      "range": {
+        "startLine": 8,
+        "startChar": 6,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "d11245180f99d45321d0b02e36c7bdf4326a6bdb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5164323f_ce21a9d4",
         "filename": "src/network/SESMailService.js",
         "patchSetId": 1
