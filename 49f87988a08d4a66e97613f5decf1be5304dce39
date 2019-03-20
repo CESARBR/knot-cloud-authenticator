@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f410a721_4a858c0a",
+        "filename": "src/data/SettingsFactory.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2019-03-20T18:00:57Z",
+      "side": 1,
+      "message": "Does the \u0027meshblu\u0027 property have a webhookUri?",
+      "range": {
+        "startLine": 69,
+        "startChar": 5,
+        "endLine": 69,
+        "endChar": 37
+      },
+      "revId": "49f87988a08d4a66e97613f5decf1be5304dce39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1ae7574d_6a7b4108",
+        "filename": "src/data/SettingsFactory.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2019-03-20T18:00:57Z",
+      "side": 1,
+      "message": "If the \u0027storage\u0027 property don\u0027t exist, get throws an error. As this is not (or it\u0027s not defined as) required, this should not happen.\n`config.has(\u0027storage\u0027)` would check if the value exists without throwing errors, and only then you should do config.get(\u0027storage\u0027).\n\nThe owner of \u0027config\u0027 project has a very strong opinion about it:\nhttps://github.com/lorenwest/node-config/issues/173\n\nSee the patches for mailService.",
+      "range": {
+        "startLine": 92,
+        "startChar": 20,
+        "endLine": 92,
+        "endChar": 42
+      },
+      "revId": "49f87988a08d4a66e97613f5decf1be5304dce39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
