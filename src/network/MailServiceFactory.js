@@ -19,6 +19,8 @@ class MailServiceFactory {
         mailService = new SESMailService(ses);
         break;
       }
+      case 'NONE':
+        break;
       default:
         throw Error('Unknown mail service');
     }
