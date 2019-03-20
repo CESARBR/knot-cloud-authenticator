@@ -3,6 +3,7 @@ import AWS from 'aws-sdk';
 
 import MailgunMailService from 'network/MailgunMailService';
 import SESMailService from 'network/SESMailService';
+import NoneMailService from 'network/NoneMailService';
 
 class MailServiceFactory {
   create(settings, logger) {
@@ -20,6 +21,9 @@ class MailServiceFactory {
         mailService = new SESMailService(ses);
         break;
       }
+      case 'NONE':
+        mailService = new NoneMailService(logger);
+        break;
       default:
         throw Error('Unknown mail service');
     }

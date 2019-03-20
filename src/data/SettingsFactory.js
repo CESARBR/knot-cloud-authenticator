@@ -26,7 +26,7 @@ const authenticatorSchema = Joi.object().keys({
   uuid: Joi.string().uuid().required(),
   token: Joi.string().required(),
 });
-const mailServices = ['MAILGUN', 'AWS-SES'];
+const mailServices = ['MAILGUN', 'AWS-SES', 'NONE'];
 const mailServiceSchema = Joi.string().valid(mailServices).required();
 const mailgunSchema = Joi.object().keys({
   apiKey: Joi.string(),
