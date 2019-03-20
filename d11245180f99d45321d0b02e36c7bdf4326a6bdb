@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "470aac0e_08722888",
+        "filename": "src/network/MailServiceFactory.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2019-03-20T21:59:33Z",
+      "side": 1,
+      "message": "It actually did NOT complain.",
+      "parentUuid": "2fa0006a_7d5ba0c8",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 25,
+        "endChar": 3
+      },
+      "revId": "d11245180f99d45321d0b02e36c7bdf4326a6bdb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cbf0fea5_81361acb",
         "filename": "src/network/SESMailService.js",
         "patchSetId": 1
@@ -72,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "6842c69f_6e0e9533",
+        "filename": "src/network/SESMailService.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2019-03-20T21:59:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "25ddd9e2_5f965469",
+      "range": {
+        "startLine": 8,
+        "startChar": 6,
+        "endLine": 8,
+        "endChar": 9
+      },
+      "revId": "d11245180f99d45321d0b02e36c7bdf4326a6bdb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5164323f_ce21a9d4",
         "filename": "src/network/SESMailService.js",
         "patchSetId": 1
@@ -92,6 +140,30 @@
       "revId": "d11245180f99d45321d0b02e36c7bdf4326a6bdb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc263e43_f50a797c",
+        "filename": "src/network/SESMailService.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2019-03-20T21:59:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5164323f_ce21a9d4",
+      "range": {
+        "startLine": 28,
+        "startChar": 7,
+        "endLine": 28,
+        "endChar": 51
+      },
+      "revId": "d11245180f99d45321d0b02e36c7bdf4326a6bdb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
