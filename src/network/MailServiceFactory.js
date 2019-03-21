@@ -5,9 +5,14 @@ import MailgunMailService from 'network/MailgunMailService';
 import SESMailService from 'network/SESMailService';
 
 class MailServiceFactory {
+  constructor(logger) {
+    this.logger = logger;
+  }
+
   create(settings) {
     let mailService;
 
+    this.logger.info(`Using ${settings.mailService} mail service`);
     switch (settings.mailService) {
       case 'MAILGUN': {
         const mailgun = new Mailgun(settings.mailgun);
