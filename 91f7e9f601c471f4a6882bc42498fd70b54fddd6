@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d4f47cd9_72b064d8",
+        "filename": "src/index.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-03-21T20:35:57Z",
+      "side": 1,
+      "message": "This should be MailServiceFactory, as you are logging the create process instead of MailService stuff. In this case, it is clearer if you pass it in MailServiceFactory\u0027s constructor.",
+      "range": {
+        "startLine": 24,
+        "startChar": 38,
+        "endLine": 24,
+        "endChar": 49
+      },
+      "revId": "91f7e9f601c471f4a6882bc42498fd70b54fddd6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dedfe80a_5321221c",
+        "filename": "src/network/MailServiceFactory.js",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1013086
+      },
+      "writtenOn": "2019-03-21T20:35:57Z",
+      "side": 1,
+      "message": "Add a constructor and store it in a class member",
+      "range": {
+        "startLine": 8,
+        "startChar": 19,
+        "endLine": 8,
+        "endChar": 25
+      },
+      "revId": "91f7e9f601c471f4a6882bc42498fd70b54fddd6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
+    }
+  ]
+}
