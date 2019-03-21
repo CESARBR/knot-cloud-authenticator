@@ -116,6 +116,30 @@
       "revId": "49f87988a08d4a66e97613f5decf1be5304dce39",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e79dac75_70854f34",
+        "filename": "src/data/SettingsFactory.js",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1013096
+      },
+      "writtenOn": "2019-03-21T12:30:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9f707e0f_36a9f2d4",
+      "range": {
+        "startLine": 92,
+        "startChar": 20,
+        "endLine": 92,
+        "endChar": 42
+      },
+      "revId": "49f87988a08d4a66e97613f5decf1be5304dce39",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
     }
   ]
 }
