@@ -19,7 +19,10 @@ async function main() {
     const loggerFactory = new LoggerFactory();
     const userStore = await (new UserStoreFactory()).create(settings);
     const routerStore = await (new RouterStoreFactory()).create(settings);
-    const mailService = (new MailServiceFactory()).create(settings);
+    const mailService = (new MailServiceFactory()).create(
+      settings,
+      loggerFactory.create(settings, 'MailService'),
+    );
     const createUser = new CreateUser(userStore, routerStore);
     const forgotPassword = new ForgotPassword(
       userStore,
