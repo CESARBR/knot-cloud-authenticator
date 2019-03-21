@@ -46,6 +46,30 @@
       "revId": "bcf931ce4068a4b02c3063207af70b1d2bad34a6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42895df0_501dd12a",
+        "filename": "src/network/MailServiceFactory.js",
+        "patchSetId": 1
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1015148
+      },
+      "writtenOn": "2019-03-21T17:27:58Z",
+      "side": 1,
+      "message": "This throws an error regarding using a sendHtml function of undefined. However it does not break the execution because sendMail (which calls sendHtml) is handled inside a try-catch block.\nFor consistency, will create a mailService that only logs \u0027to\u0027 and \u0027from\u0027.",
+      "parentUuid": "f3767cab_56f020a7",
+      "range": {
+        "startLine": 22,
+        "startChar": 6,
+        "endLine": 23,
+        "endChar": 14
+      },
+      "revId": "bcf931ce4068a4b02c3063207af70b1d2bad34a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": true
     }
   ]
 }
