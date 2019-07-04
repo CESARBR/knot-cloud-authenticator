@@ -14,16 +14,21 @@ class RouterStore {
           whitelists: {
             discover: {
               view: [{ uuid: user.uuid }],
+              as: [{ uuid: user.uuid }],
             },
             configure: {
               update: [{ uuid: user.uuid }],
               received: [{ uuid: user.uuid }],
+              as: [{ uuid: user.uuid }],
             },
             broadcast: {
               received: [{ uuid: user.uuid }],
             },
             unregister: {
               received: [{ uuid: user.uuid }],
+            },
+            message: {
+              as: [{ uuid: user.uuid }],
             },
           },
           forwarders: this.webhookUri ? this.buildForwarders() : undefined,
