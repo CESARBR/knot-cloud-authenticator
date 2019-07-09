@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/CESARBR/knot-cloud-authenticator/compare/v1.3.0...v1.4.0)
+
+### Features
+
+- Allow users to send message as a router
+
+### Bug Fixes
+
+- Update packages to fix vulnerabilities
+
 # [1.3.0](https://github.com/CESARBR/knot-cloud-authenticator/compare/v1.2.0...v1.3.0)
 
 ### Features
