@@ -1,3 +1,9 @@
+# [1.4.1](https://github.com/CESARBR/knot-cloud-authenticator/compare/v1.4.0...v1.4.1)
+
+### Bug Fixes
+
+- Update packages to fix vulnerabilities
+
 # [1.4.0](https://github.com/CESARBR/knot-cloud-authenticator/compare/v1.3.0...v1.4.0)
 
 ### Features
