@@ -41,7 +41,7 @@
     "hapi-and-healthy": "^7.0.3",
     "hapi-good-winston": "^2.1.0",
     "joi": "^14.1.0",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "mailgun-js": "^0.22.0",
     "moment": "^2.22.2",
     "password-validator": "^4.1.1",
